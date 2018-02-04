@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "982461197392",
+    "firebase_url": "https://trainmate-651fe.firebaseio.com",
+    "project_id": "trainmate-651fe",
+    "storage_bucket": "trainmate-651fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982461197392:android:e0c915fb6866d7cc",
+        "android_client_info": {
+          "package_name": "com.abc.trainmate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "982461197392-3ig606o3e80a743rh92cfkg96dak62la.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.abc.trainmate",
+            "certificate_hash": "7c484d6bcb619706098e8329ba2d1870cae2a788"
+          }
+        },
+        {
+          "client_id": "982461197392-itd2n8lnc6op5rlrdj5p4mpb4ocdmi4k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAY6tpDMR0PxZN4Dc45WYLTRNXuqElMWes"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "982461197392-itd2n8lnc6op5rlrdj5p4mpb4ocdmi4k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

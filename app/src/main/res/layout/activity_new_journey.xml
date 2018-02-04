@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.abc.trainmate.NewJourney">
+    <ProgressBar
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="match_parent"
+        android:translationZ="100dp"
+        android:layout_centerInParent="true"
+        android:layout_height="match_parent"
+        android:id="@+id/progressBar"
+        android:progressDrawable="@drawable/circular_progress_bar"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:layout_alignParentBottom="true" />
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view_new_journey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:transitionName="newJourney"
+        card_view:cardBackgroundColor="#fff"
+        card_view:cardCornerRadius="16dp"
+        card_view:cardElevation="3dp"
+        card_view:contentPadding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="vertical">
+
+
+            <TextView
+                style="@style/TextAppearance.AppCompat.Medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:text="New Journey"
+                android:textColor="@color/colorAccent" />
+
+            <EditText
+                android:id="@+id/trainStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:hint="Start Date"
+                android:ems="10"
+                android:inputType="date" />
+
+
+            <android.support.v7.widget.AppCompatAutoCompleteTextView
+                android:id="@+id/trainName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:inputType="number"
+                android:hint="Train Number" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/coachName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="2"
+                    android:gravity="center_horizontal"
+                    android:hint="Coach Name" />
+
+                <Spinner
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/spinnerCoach"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/seatNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="2"
+                    android:inputType="number"
+                    android:gravity="center_horizontal"
+                    android:hint="Seat Number" />
+
+                <Spinner
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="2"
+                    android:id="@+id/spinnerSeat"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorPrimary"
+                android:text="BEGIN"
+                android:id="@+id/done"
+                android:textColor="#fff" />
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

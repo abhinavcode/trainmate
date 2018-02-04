@@ -1,0 +1,180 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context="com.abc.trainmate.Fragments.TrainMates">
+
+    <!-- TODO: Update blank fragment layout -->
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view_new_journey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        card_view:cardBackgroundColor="#fff"
+        card_view:cardCornerRadius="16dp"
+        android:animateLayoutChanges="true"
+        card_view:cardElevation="3dp"
+        card_view:contentPadding="16dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:animateLayoutChanges="true"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        <TextView
+            android:transitionName="newJourney"
+            android:gravity="center"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/newJourney"
+            android:text="START NEW JOURNEY"/>
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/rlnewjourney"
+            android:animateLayoutChanges="true"
+            android:visibility="gone"
+            tools:context="com.abc.trainmate.NewJourney">
+            <ProgressBar
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="match_parent"
+                android:translationZ="100dp"
+                android:layout_centerInParent="true"
+                android:layout_height="match_parent"
+                android:id="@+id/progressBar"
+                android:progressDrawable="@drawable/circular_progress_bar"
+                android:layout_gravity="center"
+                android:visibility="gone"
+                android:layout_alignParentBottom="true" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="vertical">
+
+
+                    <EditText
+                        android:id="@+id/trainStart"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:hint="Start Date"
+                        android:ems="10"
+                        android:inputType="date" />
+
+
+                    <android.support.v7.widget.AppCompatAutoCompleteTextView
+                        android:id="@+id/trainName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:layout_gravity="center_horizontal"
+                        android:inputType="number"
+                        android:hint="Train Number" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/coachName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:gravity="center_horizontal"
+                            android:hint="Coach Name" />
+
+                        <Spinner
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:id="@+id/spinnerCoach"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/seatNumber"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:inputType="number"
+                            android:gravity="center_horizontal"
+                            android:hint="Seat Number" />
+
+                        <Spinner
+                            android:layout_gravity="center_vertical|center_horizontal"
+                            android:id="@+id/spinnerSeat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <Button
+                        android:layout_gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/colorPrimary"
+                        android:text="BEGIN"
+                        android:id="@+id/done"
+                        android:textColor="#fff" />
+
+                </LinearLayout>
+        </RelativeLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view_no_journey"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:foregroundGravity="center_vertical"
+        card_view:cardBackgroundColor="#fff"
+        card_view:cardCornerRadius="8dp"
+        card_view:cardElevation="3dp"
+        card_view:contentPadding="16dp">
+
+        <TextView
+            android:id="@+id/noJourney"
+            style="@style/TextAppearance.AppCompat.Large"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="You haven't added a journey yet. Add one to find your trainmates"
+            android:textColor="@color/colorPrimary"
+            android:textStyle="bold" />
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/recycler_view_trainmates"/>
+</LinearLayout>
+
+</FrameLayout>

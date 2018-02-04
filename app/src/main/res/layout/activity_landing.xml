@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="#000"
+    tools:context="com.abc.trainmate.Landing">
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:background="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/grey_300"
+                android:orientation="vertical"
+                android:gravity="center|right">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:orientation="horizontal"
+                    android:gravity="center|right">
+                    <EditText
+
+                        android:descendantFocusability="beforeDescendants"
+
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:focusedByDefault="false"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_weight="8"
+                        android:layout_marginRight="15dp"
+                        android:text="TrainMate"
+                        android:textStyle="bold"
+                        style="@style/TextAppearance.AppCompat.Large"
+                        android:gravity="center" >
+                    </TextView>
+
+
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:background="@color/colorPrimary"
+                    android:gravity="center|right">
+
+                    <AutoCompleteTextView
+                        android:textColor="@color/colorAccent"
+                        android:completionThreshold="1"
+                        android:imeOptions="actionSearch"
+                        android:id="@+id/search"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/login_edittext"
+                        android:ems="10"
+                        android:hint="Search"
+                        android:descendantFocusability="beforeDescendants"
+
+                        android:focusable="true"
+                        android:focusableInTouchMode="true"
+                        android:focusedByDefault="false"
+                        android:textColorHint="@color/grey_300"
+                        android:drawableLeft="@drawable/search">
+                    </AutoCompleteTextView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:background="@color/colorPrimary"
+            android:backgroundTint="@color/colorPrimary"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabMode="fixed"
+            app:tabGravity="fill"/>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.view.ViewPager
+
+        android:id="@+id/viewpager"
+        android:layout_marginBottom="4dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"  />
+</LinearLayout>

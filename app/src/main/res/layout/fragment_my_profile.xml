@@ -1,0 +1,204 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    tools:context="com.abc.trainmate.Fragments.MyProfile">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="match_parent"
+            android:translationZ="100dp"
+            android:layout_height="match_parent"
+            android:id="@+id/progressBar"
+            android:progressDrawable="@drawable/circular_progress_bar"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            android:layout_alignParentBottom="true" />
+        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/card_view_bio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="8dp"
+            card_view:cardBackgroundColor="#fff"
+            card_view:cardCornerRadius="16dp"
+            card_view:cardElevation="3dp"
+            card_view:contentPadding="16dp">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/biolayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/genderlayout"
+            app:passwordToggleEnabled="true"
+            android:textColorHint="@color/colorAccent"
+            app:passwordToggleTint="@color/colorPrimary">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/bio"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:ems="10"
+                android:textColor="@color/colorPrimary"
+                android:hint="Bio"
+                android:imeOptions="actionNext"
+                android:inputType="textMultiLine" />
+
+        </android.support.design.widget.TextInputLayout>
+        </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/card_view_social"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="50dp"
+                card_view:cardBackgroundColor="#fff"
+                card_view:cardCornerRadius="16dp"
+                card_view:cardElevation="3dp"
+                card_view:contentPadding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:id="@+id/llFacebook"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/fb" />
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:id="@+id/fb"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="4dp"
+                            android:autoLink="all"
+                            android:textColor="@color/colorAccent"
+                            android:gravity="center_vertical"
+                            style="@style/TextAppearance.AppCompat.Medium"
+                            android:text="Connected" />
+
+                        <Spinner
+                            android:layout_weight="1"
+                            android:id="@+id/spinnerFB"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_marginTop="12dp"
+                        android:id="@+id/llWhatsapp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/whatsapp" />
+
+                        <TextView
+                            android:id="@+id/whatsapp"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="4dp"
+                            android:autoLink="all"
+                            style="@style/TextAppearance.AppCompat.Medium"
+                            android:textColor="@color/colorPrimary"
+                            android:gravity="center_vertical"
+                            android:text="Click to add" />
+
+                        <Spinner
+                            android:layout_weight="1"
+                            android:id="@+id/spinnerWhatsapp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/llCall"
+                        android:visibility="gone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="3dp"
+                            android:src="@drawable/call" />
+
+                        <TextView
+                            style="@style/TextAppearance.AppCompat.Medium"
+                            android:id="@+id/call"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="4dp"
+                            android:autoLink="all"
+                            android:textColor="@color/colorPrimary"
+                            android:gravity="center_vertical"
+                            android:text="Click to add" />
+
+                        <Spinner
+                            android:layout_weight="1"
+                            android:id="@+id/spinnerCall"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:gravity="right" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+    <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/card_view_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        card_view:cardBackgroundColor="@color/colorAccent"
+        card_view:cardElevation="3dp"
+        card_view:contentPadding="8dp"
+        card_view:layout_constraintBottom_toBottomOf="parent">
+        <TextView
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="UPDATE"
+            style="@style/TextAppearance.AppCompat.Medium"
+            android:textColor="#fff"/>
+    </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+</FrameLayout>
