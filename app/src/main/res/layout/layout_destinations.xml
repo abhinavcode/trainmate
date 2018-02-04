@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Source" />
+
+    <TextView
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/editText"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Destination" />
+
+    <TextView
+        android:id="@+id/text_source"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/editText"
+        android:hint="select locatoin"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/text_destination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/text_source"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:hint="select location"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/button_current_location"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/text_source"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        android:text="selectlocation" />
+
+    <Button
+        android:id="@+id/button_destination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/editText2"
+        android:layout_alignStart="@+id/editText2"
+        android:layout_alignTop="@+id/button_current_location"
+        android:text="selectlocation" />
+
+    <Button
+        android:id="@+id/start_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/button_current_location"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/button_current_location"
+        android:layout_marginBottom="72dp"
+        android:text="Start Service" />
+
+    <TextView
+        android:id="@+id/textview_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button_current_location"
+        android:layout_marginTop="43dp"
+        android:layout_toEndOf="@+id/button_current_location"
+        android:layout_toRightOf="@+id/button_current_location"
+        android:text="Distance" />
+
+    <Button
+        android:id="@+id/stop_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/text_destination"
+        android:layout_alignStart="@+id/text_destination"
+        android:layout_alignTop="@+id/start_service"
+        android:text="Stop Service" />
+
+    <!--<TextView-->
+        <!--android:id="@+id/loc_update"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/button_proceed"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:layout_marginTop="41dp"-->
+        <!--android:text="Update" />-->
+
+    <Button
+        android:id="@+id/button_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/button_destination"
+        android:layout_alignRight="@+id/button_destination"
+        android:layout_centerVertical="true"
+        android:text="Notification" />
+
+    <Button
+        android:id="@+id/serviceactivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Service Activity" />
+
+    <EditText
+        android:id="@+id/alarm_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/button_notification"
+        android:layout_alignLeft="@+id/button_current_location"
+        android:layout_alignStart="@+id/button_current_location"
+        android:ems="10"
+        android:text="10"
+        android:hint="alarm distance"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_notification"
+        android:layout_alignLeft="@+id/alarm_distance"
+        android:layout_alignStart="@+id/alarm_distance"
+        android:layout_marginLeft="21dp"
+        android:layout_marginStart="21dp"
+        android:textStyle="bold"
+        android:text="Enter Alarm Distance" />
+</RelativeLayout>
