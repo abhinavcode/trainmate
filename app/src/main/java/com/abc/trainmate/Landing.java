@@ -18,7 +18,6 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Toast;
 
 import com.abc.trainmate.Fragments.Alarm;
-import com.abc.trainmate.Fragments.Messages;
 import com.abc.trainmate.Fragments.MyProfile;
 import com.abc.trainmate.Fragments.TrainMates;
 import com.abc.trainmate.JSONParse.JSONParseTrainMates;
@@ -92,16 +91,16 @@ public class Landing extends AppCompatActivity {
 
     private void setupTabIcons() {
         tabLayout.getTabAt(0).setIcon(R.drawable.dashboard_combined);
-        tabLayout.getTabAt(1).setIcon(R.drawable.leaderboard_combined);
-        tabLayout.getTabAt(2).setIcon(R.drawable.notification_combined);
-        tabLayout.getTabAt(3).setIcon(R.drawable.profile_combined);
+//        tabLayout.getTabAt(1).setIcon(R.drawable.leaderboard_combined);
+        tabLayout.getTabAt(1).setIcon(R.drawable.notification_combined);
+        tabLayout.getTabAt(2).setIcon(R.drawable.profile_combined);
     }
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         viewPager.setOffscreenPageLimit(4);
         adapter.addFragment(new TrainMates(), "ONE");
-        adapter.addFragment(new Messages(), "TWO");
+//        adapter.addFragment(new Messages(), "TWO");
         adapter.addFragment(new Alarm(), "THREE");
         adapter.addFragment(new MyProfile(), "FOUR");
         viewPager.setAdapter(adapter);

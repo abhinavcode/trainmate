@@ -20,6 +20,7 @@ import android.support.v4.app.NotificationManagerCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -48,7 +49,7 @@ public class AlarmService extends AppCompatActivity {
                 public void onReceive(Context context, Intent intent) {
                     Double lat_cords = (Double) intent.getExtras().get("lat_cordinates");
                     Double long_cords = (Double) intent.getExtras().get("long_cordinates");
-                    textView.append("\n"+lat_cords+" "+long_cords);
+//                    textView.append("\n"+lat_cords+" "+long_cords);;
                     locationdata=getSharedPreferences(filename,0);
 
 
@@ -66,6 +67,8 @@ public class AlarmService extends AppCompatActivity {
 
                           destlocal.setLatitude(loc_lat);
                           destlocal.setLongitude(loc_long);
+
+                    textView.setText("Distance Remaining: \n"+ destlocal.distanceTo(curr_location)/1000);
                         NotificationCompat.Builder notificationbuilder=new NotificationCompat.Builder(AlarmService.this).setSmallIcon(android.R.drawable.stat_notify_error)
                                 .setLargeIcon(BitmapFactory.decodeResource(getResources(), R.mipmap.ic_launcher_round))
                                 .setContentTitle("Alarm Notification")
@@ -116,6 +119,11 @@ public class AlarmService extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        WindowManager.LayoutParams params = getWindow().getAttributes();
+        params.height = (9 * getWindowManager().getDefaultDisplay().getHeight()) / 12;
+        params.width = (9 * getWindowManager().getDefaultDisplay().getWidth()) / 12;
+        this.getWindow().setAttributes(params);
         setContentView(R.layout.layout_alarmservice);
         locationdata=getSharedPreferences(filename,0);
        // MediaPlayer player=MediaPlayer.create(this,Settings.System.DEFAULT_RINGTONE_URI);

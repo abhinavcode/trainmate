@@ -20,6 +20,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.Toast;
@@ -84,6 +85,10 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
 
         super.onCreate(savedInstanceState);
 
+        WindowManager.LayoutParams params = getWindow().getAttributes();
+        params.height = (9 * getWindowManager().getDefaultDisplay().getHeight()) / 10;
+        params.width = (9 * getWindowManager().getDefaultDisplay().getWidth()) / 10;
+        this.getWindow().setAttributes(params);
         setContentView(R.layout.activity_maps);
 
         //setting up for autosuggestions
@@ -332,7 +337,7 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
                         editor.commit();
                         Toast.makeText(this, "source data added in shared pred", Toast.LENGTH_LONG).show();
                         Toast.makeText(this, sharedress+"  "+arr[1]+"  "+arr[2], Toast.LENGTH_SHORT).show();
-//
+//  `
 //                        Toast.makeText(this, "sourcelocation data added in shared pref", Toast.LENGTH_LONG).show();
 //                        Toast.makeText(this, sharedress+"  "+arr[1]+"  "+arr[2], Toast.LENGTH_SHORT).show();
 
@@ -347,8 +352,9 @@ public class MapsActivity2 extends FragmentActivity implements OnMapReadyCallbac
                         editor.putFloat("destination_latitude",Float.parseFloat(arr[1]));
                         editor.putFloat("destination_longitude",Float.parseFloat(arr[2]));
                         editor.commit();
-                        Toast.makeText(this, "destintaion data added in shared pred", Toast.LENGTH_LONG).show();
-                        Toast.makeText(this, sharedress+"  "+arr[1]+"  "+arr[2], Toast.LENGTH_SHORT).show();
+                        finish();
+//                        Toast.makeText(this, "destintaion data added in shared pred", Toast.LENGTH_LONG).show();
+//                        Toast.makeText(this, sharedress+"  "+arr[1]+"  "+arr[2], Toast.LENGTH_SHORT).show();
                     }
                     else if(value.equals("alarm")){
 
